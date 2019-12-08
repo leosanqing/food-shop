@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.leosanqing.mapper.ItemsMapperCustom" >
+  <resultMap id="myItemCommentVO" type="com.leosanqing.pojo.vo.ItemCommentVO" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+    <result column="cat_id" property="catId" jdbcType="INTEGER" />
+    <result column="root_cat_id" property="rootCatId" jdbcType="INTEGER" />
+    <result column="sell_counts" property="sellCounts" jdbcType="INTEGER" />
+    <result column="on_off_status" property="onOffStatus" jdbcType="INTEGER" />
+    <result column="created_time" property="createdTime" jdbcType="TIMESTAMP" />
+    <result column="updated_time" property="updatedTime" jdbcType="TIMESTAMP" />
+    <result column="content" property="content" jdbcType="LONGVARCHAR" />
+  </resultMap>
+
+  <select id="queryItemComments" parameterType="Map" resultMap="com.leosanqing.pojo.vo.ItemCommentVO ">
+    select
+        ic.comment_level as commentLevel,
+        ic.content as content,
+        ic.spec_name as specName,
+        ic.created_time as createdTime,
+        u.face as face,
+        u.nikename as nikename
+    FROM
+        items_comments ic
+    LEFT JOIN
+        users u
+    ON
+        ic.user_id = u.id
+    where
+        ic.item_id = #{paramsMap.itemId}
+        <if test="paramsMap.level != null and paramsMap.level != '' ">
+          AND  ic.comment_level =#{paramsMap.level}
+        </if>
+  </select>
+</mapper>

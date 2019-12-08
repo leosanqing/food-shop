@@ -1,2 +1,6 @@
-com/leosanqing/service/impl/UserServiceImpl.class
+com/leosanqing/service/impl/CategoryServiceImpl.class
+com/leosanqing/service/CarouselService.class
 com/leosanqing/service/UserService.class
+com/leosanqing/service/impl/UserServiceImpl.class
+com/leosanqing/service/impl/CarouselServiceImpl.class
+com/leosanqing/service/CategoryService.class

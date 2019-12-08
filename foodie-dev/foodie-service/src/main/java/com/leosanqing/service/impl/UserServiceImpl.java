@@ -44,6 +44,7 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional(propagation = Propagation.REQUIRED)
     public Users createUser(UserBO userBO) {
+
         Users users = new Users();
         users.setId(sid.nextShort());
         users.setUsername(userBO.getUsername());
@@ -55,12 +56,26 @@ public class UserServiceImpl implements UserService {
         users.setBirthday(DateUtil.stringToDate("1900-01-01"));
         users.setFace(FACE_PATH);
         users.setNickname(userBO.getUsername());
-        users.setSex(Sex.SECREAT.type);
+        users.setSex(Sex.SECRET.type);
         users.setCreatedTime(new Date());
         users.setUpdatedTime(new Date());
 
 
         usersMapper.insert(users);
         return users;
+    }
+
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public Users queryUsersForLogin(String username, String password){
+        Example example = new Example(Users.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("username",username);
+        criteria.andEqualTo("password",password);
+
+        Users users = usersMapper.selectOneByExample(example);
+        return users;
+
     }
 }

@@ -11,8 +11,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -39,7 +40,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/foodie-mapper/src/main/java/com/leosanqing" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-common/src/main/java/com/leosanqing/utils" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-mapper/src/main/resources/mapper" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,16 +55,21 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.leosanqing.pojo.vo" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.leosanqing.mapper.my" />
       <recent name="com.leosanqing.mapper" />
+      <recent name="com.leosanqing.enums" />
+      <recent name="com.leosanqing.pojo.vo" />
+      <recent name="com.leosanqing.mapper.my" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/foodie-mapper/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/foodie-api/src/main/resources" />
       <recent name="$PROJECT_DIR$/foodie-common/src/main/java/com/leosanqing/utils" />
       <recent name="$PROJECT_DIR$/foodie-mapper/src/main/java" />
       <recent name="$PROJECT_DIR$/foodie-mapper/src/main/java/com/leosanqing/mapper" />
-      <recent name="$PROJECT_DIR$/foodie-mapper/src/main/resources/mapper" />
-      <recent name="$PROJECT_DIR$/foodie-pojo/src/main/java/com/leosanqing/pojo" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -110,7 +116,7 @@
       <updated>1575381773833</updated>
       <workItem from="1575381778891" duration="2509000" />
       <workItem from="1575386546730" duration="1030000" />
-      <workItem from="1575389971651" duration="17761000" />
+      <workItem from="1575389971651" duration="40711000" />
     </task>
     <servers />
   </component>
@@ -122,11 +128,26 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/HelloController.java</url>
-          <line>16</line>
+          <line>21</line>
           <properties class="com.leosanqing.controller.HelloController" method="hello">
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/ItemServiceImpl.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

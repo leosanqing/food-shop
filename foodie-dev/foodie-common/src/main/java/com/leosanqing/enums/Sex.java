@@ -10,7 +10,7 @@ public enum Sex {
      */
     WOMAN(0, "女"),
     MAN(1, "男"),
-    SECREAT(2, "保密");
+    SECRET(2, "保密");
 
     public final int type;
     public final String value;
