@@ -1,16 +1,22 @@
 package com.leosanqing.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.leosanqing.enums.CommentLevel;
 import com.leosanqing.mapper.*;
 import com.leosanqing.pojo.*;
 import com.leosanqing.pojo.vo.CommentLevelCountsVO;
+import com.leosanqing.pojo.vo.ItemCommentVO;
 import com.leosanqing.service.ItemService;
+import com.leosanqing.utils.DesensitizationUtil;
+import com.leosanqing.utils.PagedGridResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -33,6 +39,9 @@ public class ItemServiceImpl implements ItemService {
 
     @Autowired
     private ItemsCommentsMapper itemsCommentsMapper;
+
+    @Autowired
+    private ItemsMapperCustom itemsMapperCustom;
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
@@ -83,6 +92,35 @@ public class ItemServiceImpl implements ItemService {
         levelCountsVO.setNormalCounts(normal);
         levelCountsVO.setTotalCounts(total);
         return levelCountsVO;
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public PagedGridResult queryPagedComments(String itemId, Integer level,Integer page,Integer pageSize) {
+        HashMap<String, Object> map = new HashMap<>(4);
+        map.put("itemId", itemId);
+        map.put("level", level);
+
+        // 一定要写在sql执行之前，因为会对其进行拦截，加入自己的语句
+        PageHelper.startPage(page,pageSize);
+        List<ItemCommentVO> itemCommentVOS = itemsMapperCustom.queryItemComments(map);
+
+        // 进行脱敏处理 
+        for (ItemCommentVO itemCommentVO : itemCommentVOS) {
+            itemCommentVO.setNickname(DesensitizationUtil.commonDisplay(itemCommentVO.getNickname()));
+        }
+
+        return setterPage(itemCommentVOS,page);
+    }
+
+    private PagedGridResult setterPage(List<?> list,int page){
+        PageInfo<?> pageList = new PageInfo<>(list);
+        PagedGridResult grid = new PagedGridResult();
+        grid.setPage(page);
+        grid.setRows(list);
+        grid.setTotal(pageList.getPages());
+        grid.setRecords(pageList.getTotal());
+        return grid;
     }
 
     private Integer getCommentCounts(String itemId, Integer level) {

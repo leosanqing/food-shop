@@ -37,4 +37,6 @@ mapper:
   not-empty: false  # 在进行数据库的操作
   identity: MYSQL
 
-
+pagehelper:
+  helper-dialect: mysql
+  support-methods-arguments: true

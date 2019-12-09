@@ -49,6 +49,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -116,7 +117,7 @@
       <updated>1575381773833</updated>
       <workItem from="1575381778891" duration="2509000" />
       <workItem from="1575386546730" duration="1030000" />
-      <workItem from="1575389971651" duration="40711000" />
+      <workItem from="1575389971651" duration="43421000" />
     </task>
     <servers />
   </component>
@@ -144,12 +145,12 @@
           <line>61</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/ItemServiceImpl.java</url>
-          <line>84</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/foodie_dev$Application.ic" NAME="Application Coverage Results" MODIFIED="1575905813558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.leosanqing.*</FILTER>
+    </SUITE>
   </component>
 </project>

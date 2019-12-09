@@ -61,7 +61,7 @@
         f.id as rootCatId,
         f.`name` as rootCatName,
         f.slogan as slogan,
-        f.cat_imag e as catImage,
+        f.cat_image as catImage,
         f.bg_color as bgColor,
         i.id as itemId,
         i.item_name as itemName,

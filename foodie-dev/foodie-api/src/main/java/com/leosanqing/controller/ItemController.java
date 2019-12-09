@@ -64,4 +64,23 @@ public class ItemController {
         }
         return JSONResult.ok(itemService.queryCommentCounts(itemId));
     }
+
+    @GetMapping("comments")
+    @ApiOperation(value = "查询商品评价", notes = "查询商品评价", httpMethod = "GET")
+    public JSONResult getCommentsCount(
+            @ApiParam(name = "itemId", value = "商品Id", required = true)
+            @RequestParam String itemId,
+            @ApiParam(name = "level", value = "商品等级", required = false)
+            @RequestParam Integer level,
+            @ApiParam(name = "page", value = "第几页", required = false)
+            @RequestParam(defaultValue = "1") Integer page,
+            @ApiParam(name = "pageSize", value = "每页个数", required = false)
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+
+        if (StringUtils.isBlank(itemId)) {
+            return JSONResult.errorMsg("商品id为空");
+        }
+        return JSONResult.ok(itemService.queryPagedComments(itemId,level,page,pageSize));
+    }
+
 }

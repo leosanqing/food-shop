@@ -14,8 +14,8 @@ import java.util.Date;
 public class ItemCommentVO {
     private Integer commentLevel;
     private String content;
-    private String specName;
+    private String sepcName;
     private Date createdTime;
     private String userFace;
-    private String nikename;
+    private String nickname;
 }
