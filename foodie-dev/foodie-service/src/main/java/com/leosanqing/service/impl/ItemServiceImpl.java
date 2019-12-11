@@ -7,6 +7,7 @@ import com.leosanqing.mapper.*;
 import com.leosanqing.pojo.*;
 import com.leosanqing.pojo.vo.CommentLevelCountsVO;
 import com.leosanqing.pojo.vo.ItemCommentVO;
+import com.leosanqing.pojo.vo.SearchItemsVO;
 import com.leosanqing.service.ItemService;
 import com.leosanqing.utils.DesensitizationUtil;
 import com.leosanqing.utils.PagedGridResult;
@@ -105,12 +106,38 @@ public class ItemServiceImpl implements ItemService {
         PageHelper.startPage(page,pageSize);
         List<ItemCommentVO> itemCommentVOS = itemsMapperCustom.queryItemComments(map);
 
-        // 进行脱敏处理 
+        // 进行脱敏处理
         for (ItemCommentVO itemCommentVO : itemCommentVOS) {
             itemCommentVO.setNickname(DesensitizationUtil.commonDisplay(itemCommentVO.getNickname()));
         }
 
         return setterPage(itemCommentVOS,page);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public PagedGridResult searchItems(String keywords, String sort, Integer page, Integer pageSize) {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("keywords",keywords);
+        map.put("sort",sort);
+
+
+        PageHelper.startPage(page,pageSize);
+        List<SearchItemsVO> searchItemsVOS = itemsMapperCustom.searchItems(map);
+        return setterPage(searchItemsVOS,page);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public PagedGridResult searchItemsByCatId(Integer catId, String sort, Integer page, Integer pageSize) {
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("catId",catId);
+        map.put("sort",sort);
+
+
+        PageHelper.startPage(page,pageSize);
+        List<SearchItemsVO> searchItemsVOS = itemsMapperCustom.searchItemsByThirdCatId(map);
+        return setterPage(searchItemsVOS,page);
     }
 
     private PagedGridResult setterPage(List<?> list,int page){

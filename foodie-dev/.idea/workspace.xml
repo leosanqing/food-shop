@@ -117,7 +117,7 @@
       <updated>1575381773833</updated>
       <workItem from="1575381778891" duration="2509000" />
       <workItem from="1575386546730" duration="1030000" />
-      <workItem from="1575389971651" duration="43421000" />
+      <workItem from="1575389971651" duration="48728000" />
     </task>
     <servers />
   </component>
@@ -144,6 +144,16 @@
           <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
           <line>61</line>
           <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>119</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/ItemServiceImpl.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

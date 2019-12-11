@@ -83,4 +83,40 @@ public class ItemController {
         return JSONResult.ok(itemService.queryPagedComments(itemId,level,page,pageSize));
     }
 
+
+    @GetMapping("search")
+    @ApiOperation(value = "搜索商品列表", notes = "搜索商品列表", httpMethod = "GET")
+    public JSONResult searchItems(
+            @ApiParam(name = "keywords", value = "关键字", required = true)
+            @RequestParam String keywords,
+            @ApiParam(name = "sort", value = "排序规则", required = false)
+            @RequestParam String sort,
+            @ApiParam(name = "page", value = "第几页", required = false)
+            @RequestParam(defaultValue = "1") Integer page,
+            @ApiParam(name = "pageSize", value = "每页个数", required = false)
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+
+        if (StringUtils.isBlank(keywords)) {
+            return JSONResult.errorMsg("关键字为空");
+        }
+        return JSONResult.ok(itemService.searchItems(keywords,sort,page,pageSize));
+    }
+
+    @GetMapping("catItems")
+    @ApiOperation(value = "根据第三级分类搜索商品列表", notes = "根据第三级分类搜索商品列表", httpMethod = "GET")
+    public JSONResult searchItems(
+            @ApiParam(name = "catId", value = "第三级分类id", required = true)
+            @RequestParam Integer catId,
+            @ApiParam(name = "sort", value = "排序规则", required = false)
+            @RequestParam String sort,
+            @ApiParam(name = "page", value = "第几页", required = false)
+            @RequestParam(defaultValue = "1") Integer page,
+            @ApiParam(name = "pageSize", value = "每页个数", required = false)
+            @RequestParam(defaultValue = "10") Integer pageSize) {
+
+        if (catId == null) {
+            return JSONResult.errorMsg("分类为空");
+        }
+        return JSONResult.ok(itemService.searchItemsByCatId(catId,sort,page,pageSize));
+    }
 }
