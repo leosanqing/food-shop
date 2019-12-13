@@ -1,12 +1,11 @@
 package com.leosanqing.controller;
 
-import com.leosanqing.enums.CommentLevel;
 import com.leosanqing.pojo.Items;
 import com.leosanqing.pojo.ItemsImg;
 import com.leosanqing.pojo.ItemsParam;
 import com.leosanqing.pojo.ItemsSpec;
-import com.leosanqing.pojo.vo.CategoryVO;
 import com.leosanqing.pojo.vo.ItemInfoVO;
+import com.leosanqing.pojo.vo.ShopcartVO;
 import com.leosanqing.service.ItemService;
 import com.leosanqing.utils.JSONResult;
 import io.swagger.annotations.Api;
@@ -118,5 +117,18 @@ public class ItemController {
             return JSONResult.errorMsg("分类为空");
         }
         return JSONResult.ok(itemService.searchItemsByCatId(catId,sort,page,pageSize));
+    }
+
+    @GetMapping("refresh")
+    @ApiOperation(value = "根据第三级分类搜索商品列表", notes = "根据第三级分类搜索商品列表", httpMethod = "GET")
+    public JSONResult queryItemsBySpecIds(
+            @ApiParam(name = "itemSpecIds", value = "商品规格Id列表", required = true)
+            @RequestParam String itemSpecIds
+            ){
+        if (StringUtils.isBlank(itemSpecIds)) {
+            return JSONResult.errorMsg("商品规格Id列表为空");
+        }
+        List<ShopcartVO> shopCartBOS = itemService.queryItemsBySpecIds(itemSpecIds);
+        return JSONResult.ok(shopCartBOS);
     }
 }

@@ -25,7 +25,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("index")
-@Api(value = "首页",tags = {"首页展示的相关接口"})
+@Api(value = "首页", tags = {"首页展示的相关接口"})
 public class IndexController {
 
     @Autowired
@@ -35,29 +35,29 @@ public class IndexController {
     private CategoryService categoryService;
 
     @GetMapping("carousel")
-    @ApiOperation(value = "获取首页了轮播图列表",notes ="获取首页轮播图列表",httpMethod = "GET")
-    public JSONResult carousel(){
+    @ApiOperation(value = "获取首页了轮播图列表", notes = "获取首页轮播图列表", httpMethod = "GET")
+    public JSONResult carousel() {
         List<Carousel> carousels = carouselService.queryAll(YesOrNo.YES.type);
 
-        return JSONResult.ok(carousels );
+        return JSONResult.ok(carousels);
     }
 
     @GetMapping("cats")
-    @ApiOperation(value = "获取一级目录所有节点",notes ="获取一级目录所有节点",httpMethod = "GET")
-    public JSONResult cats(){
+    @ApiOperation(value = "获取一级目录所有节点", notes = "获取一级目录所有节点", httpMethod = "GET")
+    public JSONResult cats() {
 
         List<Category> categories = categoryService.queryAllRootLevelCat();
-        return JSONResult.ok(categories );
+        return JSONResult.ok(categories);
     }
 
     @GetMapping("subCat/{rootCatId}")
-    @ApiOperation(value = "获取商品子分类",notes ="获取商品子分类",httpMethod = "GET")
+    @ApiOperation(value = "获取商品子分类", notes = "获取商品子分类", httpMethod = "GET")
     public JSONResult subCats(
-            @ApiParam(name = "rootCatId",value = "一级分类Id",required = true)
-            @PathVariable Integer rootCatId){
+            @ApiParam(name = "rootCatId", value = "一级分类Id", required = true)
+            @PathVariable Integer rootCatId) {
 
 
-        if(rootCatId == null){
+        if (rootCatId == null) {
             return JSONResult.errorMsg("商品分类不存在");
         }
         List<CategoryVO> categories = categoryService.getSubCatList(rootCatId);
@@ -66,13 +66,13 @@ public class IndexController {
 
 
     @GetMapping("sixNewItems/{rootCatId}")
-    @ApiOperation(value = "查询每个分类下的六个最新商品",notes ="查询每个分类下的六个最新商品",httpMethod = "GET")
-    public JSONResult  getSixNewItems(
-            @ApiParam(name = "rootCatId",value = "一级分类Id",required = true)
-            @PathVariable Integer rootCatId){
+    @ApiOperation(value = "查询每个分类下的六个最新商品", notes = "查询每个分类下的六个最新商品", httpMethod = "GET")
+    public JSONResult getSixNewItems(
+            @ApiParam(name = "rootCatId", value = "一级分类Id", required = true)
+            @PathVariable Integer rootCatId) {
 
 
-        if(rootCatId == null){
+        if (rootCatId == null) {
             return JSONResult.errorMsg("商品分类不存在");
         }
         List<NewItemsVO> categories = categoryService.getSixNewItemsLazy(rootCatId);

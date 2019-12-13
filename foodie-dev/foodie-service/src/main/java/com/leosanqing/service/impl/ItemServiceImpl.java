@@ -5,9 +5,12 @@ import com.github.pagehelper.PageInfo;
 import com.leosanqing.enums.CommentLevel;
 import com.leosanqing.mapper.*;
 import com.leosanqing.pojo.*;
+import com.leosanqing.pojo.bo.ShopCartBO;
 import com.leosanqing.pojo.vo.CommentLevelCountsVO;
 import com.leosanqing.pojo.vo.ItemCommentVO;
 import com.leosanqing.pojo.vo.SearchItemsVO;
+
+import com.leosanqing.pojo.vo.ShopcartVO;
 import com.leosanqing.service.ItemService;
 import com.leosanqing.utils.DesensitizationUtil;
 import com.leosanqing.utils.PagedGridResult;
@@ -17,6 +20,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
@@ -155,5 +160,17 @@ public class ItemServiceImpl implements ItemService {
         comments.setCommentLevel(level);
         comments.setItemId(itemId);
         return itemsCommentsMapper.selectCount(comments);
+    }
+
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public List<ShopcartVO> queryItemsBySpecIds(String specIds) {
+
+        String ids[] = specIds.split(",");
+        List<String> specIdsList = new ArrayList<>();
+        Collections.addAll(specIdsList, ids);
+
+        return itemsMapperCustom.queryItemsBySpecIds(specIdsList);
     }
 }

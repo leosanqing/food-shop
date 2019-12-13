@@ -4,8 +4,10 @@ import com.leosanqing.pojo.Items;
 import com.leosanqing.pojo.ItemsImg;
 import com.leosanqing.pojo.ItemsParam;
 import com.leosanqing.pojo.ItemsSpec;
+import com.leosanqing.pojo.bo.ShopCartBO;
 import com.leosanqing.pojo.vo.CommentLevelCountsVO;
 import com.leosanqing.pojo.vo.ItemCommentVO;
+import com.leosanqing.pojo.vo.ShopcartVO;
 import com.leosanqing.utils.PagedGridResult;
 
 import java.util.List;
@@ -83,5 +85,10 @@ public interface ItemService {
      */
     PagedGridResult searchItemsByCatId(Integer catId,String sort,Integer page,Integer pageSize);
 
-
+    /**
+     * 根据商品规格id查询商品信息
+     * @param specIds
+     * @return
+     */
+    List<ShopcartVO> queryItemsBySpecIds(String specIds);
 }

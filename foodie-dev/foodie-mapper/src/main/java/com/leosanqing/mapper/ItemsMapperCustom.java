@@ -3,8 +3,10 @@ package com.leosanqing.mapper;
 import com.leosanqing.my.mapper.MyMapper;
 import com.leosanqing.pojo.Items;
 import com.leosanqing.pojo.ItemsComments;
+import com.leosanqing.pojo.bo.ShopCartBO;
 import com.leosanqing.pojo.vo.ItemCommentVO;
 import com.leosanqing.pojo.vo.SearchItemsVO;
+import com.leosanqing.pojo.vo.ShopcartVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -38,6 +40,15 @@ public interface ItemsMapperCustom {
      */
     List<SearchItemsVO> searchItemsByThirdCatId(
             @Param("paramsMap") Map<String, Object> map);
+
+
+    /**
+     * 根据第三级目录查询商品
+     * @param specIdsList
+     * @return
+     */
+    List<ShopcartVO> queryItemsBySpecIds(@Param("paramsList") List specIdsList);
+
 
 
 }

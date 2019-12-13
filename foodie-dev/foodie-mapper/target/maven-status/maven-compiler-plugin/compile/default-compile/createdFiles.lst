@@ -25,6 +25,7 @@ com/leosanqing/mapper/ItemsMapper.class
 com/leosanqing/mapper/ItemsImgMapper.class
 com/leosanqing/mapper/CategoryMapper.class
 com/leosanqing/mapper/UserAddressMapper.class
+com/leosanqing/mapper/ItemsMapperCustom.class
 org/n3r/idworker/Test.class
 org/n3r/idworker/utils/Props.class
 org/n3r/idworker/utils/Utils.class

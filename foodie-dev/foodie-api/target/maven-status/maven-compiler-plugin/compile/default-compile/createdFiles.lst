@@ -1,4 +1,10 @@
 com/leosanqing/controller/IndexController.class
 com/leosanqing/controller/PassportController.class
 com/leosanqing/controller/HelloController.class
+com/leosanqing/controller/AddressController.class
 com/leosanqing/Application.class
+com/leosanqing/controller/ShopCartController.class
+com/leosanqing/aspect/ServiceLogAspect.class
+com/leosanqing/config/CorsConfig.class
+com/leosanqing/controller/ItemController.class
+com/leosanqing/config/Swagger2.class
