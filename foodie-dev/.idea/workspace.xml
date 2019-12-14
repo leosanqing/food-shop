@@ -119,7 +119,7 @@
       <updated>1575381773833</updated>
       <workItem from="1575381778891" duration="2509000" />
       <workItem from="1575386546730" duration="1030000" />
-      <workItem from="1575389971651" duration="62193000" />
+      <workItem from="1575389971651" duration="70225000" />
     </task>
     <servers />
   </component>
@@ -174,8 +174,23 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/AddressController.java</url>
-          <line>39</line>
+          <line>41</line>
           <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/AddressController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/AddressServiceImpl.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/AddressServiceImpl.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
