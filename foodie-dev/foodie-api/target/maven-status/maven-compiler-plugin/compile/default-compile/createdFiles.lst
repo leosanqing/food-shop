@@ -5,7 +5,10 @@ com/leosanqing/controller/OrderController.class
 com/leosanqing/controller/ItemController.class
 com/leosanqing/config/Swagger2.class
 com/leosanqing/controller/HelloController.class
+com/leosanqing/config/OrderJob.class
 com/leosanqing/controller/AddressController.class
 com/leosanqing/controller/ShopCartController.class
+com/leosanqing/controller/center/CenterUserController.class
 com/leosanqing/aspect/ServiceLogAspect.class
 com/leosanqing/config/CorsConfig.class
+com/leosanqing/controller/center/CenterController.class

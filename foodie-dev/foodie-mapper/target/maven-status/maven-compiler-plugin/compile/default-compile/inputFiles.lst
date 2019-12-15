@@ -19,8 +19,10 @@
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/org/n3r/idworker/utils/HttpReq.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/org/n3r/idworker/strategy/DefaultWorkerIdStrategy.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/com/leosanqing/my/mapper/MyMapper.java
+/Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/com/leosanqing/mapper/OrdersMapper.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/com/leosanqing/mapper/OrderStatusMapper.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/com/leosanqing/mapper/ItemsImgMapper.java
+/Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/com/leosanqing/mapper/OrderItemsMapper.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/org/n3r/idworker/utils/Utils.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/org/n3r/idworker/strategy/DefaultRandomCodeStrategy.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-mapper/src/main/java/org/n3r/idworker/WorkerIdStrategy.java

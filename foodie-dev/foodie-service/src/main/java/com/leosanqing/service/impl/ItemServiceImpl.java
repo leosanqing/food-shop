@@ -3,6 +3,7 @@ package com.leosanqing.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.leosanqing.enums.CommentLevel;
+import com.leosanqing.enums.YesOrNo;
 import com.leosanqing.mapper.*;
 import com.leosanqing.pojo.*;
 import com.leosanqing.pojo.bo.ShopCartBO;
@@ -163,6 +164,16 @@ public class ItemServiceImpl implements ItemService {
     }
 
 
+    @Override
+    @Transactional(propagation = Propagation.REQUIRED)
+    public void decreaseItemSpecStock(String specId, Integer buyCount) {
+        final Integer result = itemsMapperCustom.decreaseItemSpecStock(specId, buyCount);
+
+        if(result != 1){
+            throw new RuntimeException("减库存失败. 原因：库存不足");
+        }
+    }
+
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
     public List<ShopcartVO> queryItemsBySpecIds(String specIds) {
@@ -172,5 +183,23 @@ public class ItemServiceImpl implements ItemService {
         Collections.addAll(specIdsList, ids);
 
         return itemsMapperCustom.queryItemsBySpecIds(specIdsList);
+    }
+
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public ItemsSpec queryItemBySpecId(String specId) {
+
+        return itemsSpecMapper.selectByPrimaryKey(specId);
+    }
+
+    @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
+    public String queryItemImgByItemId(String itemId) {
+        final ItemsImg itemsImg = new ItemsImg();
+        itemsImg.setItemId(itemId);
+        itemsImg.setIsMain(YesOrNo.YES.type);
+        final ItemsImg itemsImg1 = itemsImgMapper.selectOne(itemsImg);
+
+        return itemsImg1 == null ? "" : itemsImg1.getUrl();
     }
 }
