@@ -2,8 +2,10 @@ package com.leosanqing.controller.center;
 
 import com.leosanqing.pojo.Users;
 import com.leosanqing.pojo.bo.center.CenterUserBO;
+import com.leosanqing.resource.FileUpload;
 import com.leosanqing.service.center.CenterUserService;
 import com.leosanqing.utils.CookieUtils;
+import com.leosanqing.utils.DateUtil;
 import com.leosanqing.utils.JSONResult;
 import com.leosanqing.utils.JsonUtils;
 import io.swagger.annotations.Api;
@@ -13,7 +15,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -35,18 +36,21 @@ import java.util.Map;
 @RestController
 @RequestMapping("userInfo")
 public class CenterUserController {
-    public static final String USER_FACE_IMG_LOCATION =
-            File.separator + "Users" +
-                    File.separator + "zhuerchong" +
-                    File.separator + "Desktop" +
-                    File.separator + "code" +
-                    File.separator + "idea" +
-                    File.separator + "foodie-dev" +
-                    File.separator + "img";
+//    public static final String USER_FACE_IMG_LOCATION =
+//            File.separator + "Users" +
+//                    File.separator + "zhuerchong" +
+//                    File.separator + "Desktop" +
+//                    File.separator + "code" +
+//                    File.separator + "idea" +
+//                    File.separator + "foodie-dev" +
+//                    File.separator + "img";
 
 
     @Autowired
     private CenterUserService centerUserService;
+
+    @Autowired
+    private FileUpload fileUpload;
 
     @PostMapping("update")
     @ApiOperation(value = "更新用户信息", notes = "更新用户信息", httpMethod = "POST")
@@ -86,7 +90,9 @@ public class CenterUserController {
             @ApiParam(name = "userId", value = "用户id", required = true)
             @RequestParam String userId,
             @ApiParam(name = "file", value = "用户头像", required = true)
-                    MultipartFile file
+                    MultipartFile file,
+            HttpServletRequest request,
+            HttpServletResponse response
 
     ) {
         if (StringUtils.isBlank(userId)) {
@@ -105,11 +111,15 @@ public class CenterUserController {
                 String newFileName = "face-" + userId + "." + split[split.length - 1];
 
                 // 文件最终保存的路径
-                String finalPath = USER_FACE_IMG_LOCATION + userFaceImgPrefix + File.pathSeparator + newFileName;
+//                String finalPath = USER_FACE_IMG_LOCATION + userFaceImgPrefix + File.pathSeparator + newFileName;
+                String finalPath = fileUpload.getUserFaceImgLocation()  + userFaceImgPrefix + File.separator + newFileName;
 
+
+                // 用于提供给web服务
+                userFaceImgPrefix += ("/"+newFileName);
                 final File outFile = new File(finalPath);
-                final File parent = outFile.getParentFile();
-                if(parent != null){
+                File parent = outFile.getParentFile();
+                if (parent != null) {
                     // 创建文件夹
                     parent.mkdirs();
                 }
@@ -120,15 +130,26 @@ public class CenterUserController {
                     while ((b = bin.read()) != -1) {
                         bout.write(b);
                     }
-                }
-                catch (IOException e) {
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
 
             }
         }
 
+        String finalUserServerUrl = fileUpload.getImgServerUrl() +
+                userFaceImgPrefix
+                +"?t="+ DateUtil.getCurrentDateString(DateUtil.DATE_PATTERN);
+
+        final Users users = centerUserService.updateUserFace(userId, finalUserServerUrl);
+
+        setNullProperty(users);
+        CookieUtils.setCookie(request, response, "user",
+                JsonUtils.objectToJson(users), true);
+
+        //TODO 后续增加令牌 整合进redis
         return JSONResult.ok();
+
     }
 
     /**
