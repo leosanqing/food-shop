@@ -3,6 +3,7 @@
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/controller/center/CenterUserController.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/resource/FileUpload.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/config/OrderJob.java
+/Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/exception/CustomExceptionHandler.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/controller/OrderController.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/controller/center/CenterController.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-api/src/main/java/com/leosanqing/aspect/ServiceLogAspect.java

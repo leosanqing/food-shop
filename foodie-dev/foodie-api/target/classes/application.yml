@@ -22,7 +22,9 @@ spring:
       pool-name: DataSourceHikariCP
       max-lifetime: 1800000       # 连接的生命时长(毫秒),默认30分钟
       connection-test-query: SELECT 1
-
+  servlet:
+    multipart:
+      max-file-size: 512000
 #####################
 #
 #   mybatis 配置

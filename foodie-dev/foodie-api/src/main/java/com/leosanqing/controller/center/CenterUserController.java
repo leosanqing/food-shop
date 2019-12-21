@@ -104,10 +104,19 @@ public class CenterUserController {
             return JSONResult.errorMsg("文件不能为空");
         }
 
+
         final String filename = file.getOriginalFilename();
         if (StringUtils.isNotBlank(filename)) {
             final String[] split = StringUtils.split(filename, "\\.");
-            if (split != null) {
+            final String suffix = split[split.length -1];
+            if(!suffix.equalsIgnoreCase("png")
+                    && !suffix.equalsIgnoreCase("jpg")
+                    && ! suffix.equalsIgnoreCase("jpeg")){
+
+                return JSONResult.errorMsg("图片格式不正确");
+            }
+
+            if (split != null || split.length>0) {
                 String newFileName = "face-" + userId + "." + split[split.length - 1];
 
                 // 文件最终保存的路径

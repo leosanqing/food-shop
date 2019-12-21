@@ -8,6 +8,7 @@ com/leosanqing/config/Swagger2.class
 com/leosanqing/controller/HelloController.class
 com/leosanqing/config/OrderJob.class
 com/leosanqing/controller/AddressController.class
+com/leosanqing/controller/center/MyOrdersController.class
 com/leosanqing/controller/ShopCartController.class
 com/leosanqing/resource/FileUpload.class
 com/leosanqing/config/WebMvcConfig.class

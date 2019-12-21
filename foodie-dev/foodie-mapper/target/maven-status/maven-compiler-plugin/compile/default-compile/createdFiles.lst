@@ -25,6 +25,7 @@ com/leosanqing/mapper/CategoryMapperCustom.class
 com/leosanqing/mapper/ItemsMapper.class
 com/leosanqing/mapper/ItemsImgMapper.class
 com/leosanqing/mapper/OrdersMapper.class
+com/leosanqing/mapper/OrdersMapperCustom.class
 com/leosanqing/mapper/CategoryMapper.class
 com/leosanqing/mapper/UserAddressMapper.class
 com/leosanqing/mapper/ItemsMapperCustom.class

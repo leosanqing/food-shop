@@ -1,4 +1,5 @@
 com/leosanqing/service/impl/CategoryServiceImpl.class
+com/leosanqing/service/center/MyOrdersService.class
 com/leosanqing/service/OrderService.class
 com/leosanqing/service/ItemService.class
 com/leosanqing/service/UserService.class
@@ -12,3 +13,4 @@ com/leosanqing/service/impl/ItemServiceImpl.class
 com/leosanqing/service/CarouselService.class
 com/leosanqing/service/impl/AddressServiceImpl.class
 com/leosanqing/service/CategoryService.class
+com/leosanqing/service/center/impl/MyOrdersServiceImpl.class
