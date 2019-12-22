@@ -12,6 +12,8 @@
     <groupId>com.leosanqing</groupId>
     <artifactId>foodie-api</artifactId>
 
+    <!--    打包 [1]-->
+    <packaging>war</packaging>
 
     <!--    api -> service -> mapper -> pojo -> common-->
     <dependencies>
@@ -26,6 +28,12 @@
             <scope>test</scope>
         </dependency>
 
+        <!--        打包 [3] 添加自己的tomcat-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>javax.servlet-api</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
     </dependencies>
 
 

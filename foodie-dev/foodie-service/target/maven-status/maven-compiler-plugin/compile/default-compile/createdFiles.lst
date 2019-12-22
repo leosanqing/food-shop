@@ -3,11 +3,13 @@ com/leosanqing/service/center/MyOrdersService.class
 com/leosanqing/service/OrderService.class
 com/leosanqing/service/ItemService.class
 com/leosanqing/service/UserService.class
+com/leosanqing/service/center/impl/MyCommentsServiceImpl.class
 com/leosanqing/service/AddressService.class
 com/leosanqing/service/impl/UserServiceImpl.class
 com/leosanqing/service/impl/CarouselServiceImpl.class
 com/leosanqing/service/impl/OrderServiceImpl.class
 com/leosanqing/service/center/CenterUserService.class
+com/leosanqing/service/center/MyCommentsService.class
 com/leosanqing/service/center/impl/CenterUserServiceImpl.class
 com/leosanqing/service/impl/ItemServiceImpl.class
 com/leosanqing/service/CarouselService.class

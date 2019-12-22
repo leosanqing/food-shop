@@ -20,6 +20,7 @@ com/leosanqing/mapper/OrderItemsMapper.class
 org/n3r/idworker/utils/Props$Silent.class
 org/n3r/idworker/strategy/DayPrefixRandomCodeStrategy.class
 org/n3r/idworker/Sid.class
+com/leosanqing/mapper/ItemsCommentsMapperCustom.class
 com/leosanqing/mapper/UsersMapper.class
 com/leosanqing/mapper/CategoryMapperCustom.class
 com/leosanqing/mapper/ItemsMapper.class

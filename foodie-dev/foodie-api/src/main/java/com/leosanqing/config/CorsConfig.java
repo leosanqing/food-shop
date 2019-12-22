@@ -20,6 +20,9 @@ public class CorsConfig {
     public CorsFilter corsFilter(){
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("http://localhost:8080");
+        config.addAllowedOrigin("http://localhost");
+        config.addAllowedOrigin("http://10.211.55.3:8080");
+        config.addAllowedOrigin("http://10.211.55.3");
 
         config.setAllowCredentials(true);
         config.addAllowedMethod("*");

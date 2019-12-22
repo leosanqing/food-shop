@@ -11,6 +11,7 @@
     <result column="realPayAmount" property="realPayAmount" />
     <result column="postAmount" property="postAmount" />
     <result column="orderStatus" property="orderStatus" />
+    <result column="isComment" property="isComment" />
 
     <collection property="subOrderItemList" ofType="com.leosanqing.pojo.vo.MySubOrderItemVO">
 
@@ -40,7 +41,8 @@
       oi.item_img as itemImg,
       oi.item_spec_name as itemSpecName,
       oi.buy_counts as buyCounts,
-      oi.price as price
+      oi.price as price,
+      od.is_comment as isComment
     FROM
         orders od
     LEFT JOIN
@@ -59,5 +61,55 @@
     ORDER BY
         od.updated_time ASC
   </select>
+
+
+
+  <select id="getMyOrderStatusCounts" parameterType="Map" resultType="int">
+    SELECT
+      count(1)
+    FROM
+        orders o
+    LEFT JOIN
+        order_status os
+    on
+        o.id = os.order_id
+    WHERE
+        o.user_id = #{paramsMap.userId}
+    AND
+        os.order_status = #{paramsMap.orderStatus}
+      <if test="paramsMap.isComment != null">
+        and o.is_comment = #{paramsMap.isComment}
+      </if>
+  </select>
+
+
+  <select id="getMyOrderTrend" parameterType="Map" resultType="com.leosanqing.pojo.OrderStatus">
+
+        SELECT
+            os.order_id as orderId,
+            os.order_status as orderStatus,
+            os.created_time as createdTime,
+            os.pay_time as payTime,
+            os.deliver_time as deliverTime,
+            os.success_time as successTime,
+            os.close_time as closeTime,
+            os.comment_time as commentTime
+        FROM
+          orders o
+        LEFT JOIN
+          order_status os
+        on
+          o.id = os.order_id
+        WHERE
+          o.is_delete = 0
+        AND
+          o.user_id = #{paramsMap.userId}
+        AND
+          os.order_status in (20, 30, 40)
+        ORDER BY
+          os.order_id
+        DESC
+    </select>
+
 
 </mapper>

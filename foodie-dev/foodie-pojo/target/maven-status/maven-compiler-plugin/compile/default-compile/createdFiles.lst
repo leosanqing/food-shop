@@ -19,9 +19,12 @@ com/leosanqing/pojo/Stu.class
 com/leosanqing/pojo/vo/SimpleItemVO.class
 com/leosanqing/pojo/OrderItems.class
 com/leosanqing/pojo/Carousel.class
+com/leosanqing/pojo/vo/OrderStatusCountsVO.class
 com/leosanqing/pojo/Orders.class
 com/leosanqing/pojo/vo/ItemCommentVO.class
 com/leosanqing/pojo/vo/CommentLevelCountsVO.class
+com/leosanqing/pojo/bo/center/OrderItemsCommentBO.class
+com/leosanqing/pojo/vo/MyCommentVO.class
 com/leosanqing/pojo/bo/SubmitOrderBO.class
 com/leosanqing/pojo/vo/SearchItemsVO.class
 com/leosanqing/pojo/ItemsParam.class
