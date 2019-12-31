@@ -89,7 +89,7 @@ mysql
 
 1. 首先需要下载  lombok 插件，不然使用不了 @Data注解
 
-Idea Mac 的快捷键是 `command + ,`.windows 是`ctrl+alt+s`
+Idea Mac 的快捷键是 `command + ,` windows 是`ctrl+alt+s`
 
 ![](img/Xnip2019-12-29_19-01-37.jpg)
 
