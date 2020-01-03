@@ -1,0 +1,22 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "com.leosanqing.resource.FileUpload",
+      "sourceType": "com.leosanqing.resource.FileUpload"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.img-server-url",
+      "type": "java.lang.String",
+      "sourceType": "com.leosanqing.resource.FileUpload"
+    },
+    {
+      "name": "file.user-face-img-location",
+      "type": "java.lang.String",
+      "sourceType": "com.leosanqing.resource.FileUpload"
+    }
+  ],
+  "hints": []
+}

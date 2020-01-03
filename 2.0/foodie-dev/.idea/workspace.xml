@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4b8a048c-cb1b-4a70-9fea-5f3dcac52ef2" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="userSettingsFile" value="$USER_HOME$/.m2/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UTXtZxeF4igWfzYHzvuJ6Clkbe" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/foodie-mapper/src/main/java/com/leosanqing" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/foodie-api/src/main/resources" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.25714287" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.leosanqing.pojo.vo" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.leosanqing.pojo.vo" />
+      <recent name="com.leosanqing.mapper" />
+      <recent name="com.leosanqing.pojo.bo.center" />
+      <recent name="com.leosanqing.controller.center" />
+      <recent name="com.leosanqing.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/foodie-api/src/main/resources" />
+      <recent name="$PROJECT_DIR$/foodie-mapper/src/main/resources/mapper" />
+      <recent name="$PROJECT_DIR$/foodie-mapper/src/main/java/com/leosanqing/mapper" />
+      <recent name="$PROJECT_DIR$/foodie-pojo/src/main/java/com/leosanqing/pojo" />
+      <recent name="$PROJECT_DIR$/foodie-common/src/main/java/com/leosanqing/utils" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="foodie-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.leosanqing.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.leosanqing.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b8a048c-cb1b-4a70-9fea-5f3dcac52ef2" name="Default Changelist" comment="" />
+      <created>1575381773833</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575381773833</updated>
+      <workItem from="1575381778891" duration="2509000" />
+      <workItem from="1575386546730" duration="1030000" />
+      <workItem from="1575389971651" duration="84014000" />
+      <workItem from="1576415085855" duration="1222000" />
+      <workItem from="1576417814021" duration="8527000" />
+      <workItem from="1576510768823" duration="3950000" />
+      <workItem from="1576540292832" duration="1345000" />
+      <workItem from="1576541997135" duration="18875000" />
+      <workItem from="1577533511933" duration="7060000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1120" y="945" key="#Inspections" timestamp="1576997696151">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-1120" y="945" key="#Inspections/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576997696151" />
+    <state x="-1120" y="945" key="#Notifications" timestamp="1576935677329">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-1120" y="945" key="#Notifications/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576935677329" />
+    <state x="-1256" y="942" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1577533837300">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-1256" y="942" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577533837300" />
+    <state x="-907" y="996" key="#com.intellij.ide.util.MemberChooser" timestamp="1577025317769">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-907" y="996" key="#com.intellij.ide.util.MemberChooser/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577025317769" />
+    <state x="-1032" y="1015" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1576511447203">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-1032" y="1015" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576511447203" />
+    <state x="-1440" y="428" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1576939795236">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-1440" y="428" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576939795236" />
+    <state x="-831" y="987" width="267" height="586" key="#xdebugger.evaluate" timestamp="1576508601161">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-831" y="987" width="267" height="586" key="#xdebugger.evaluate/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576508601161" />
+    <state width="408" height="466" key="DebuggerActiveHint" timestamp="1576422099431">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="408" height="466" key="DebuggerActiveHint/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576422099431" />
+    <state x="-853" y="1180" key="Github.ShareDialog" timestamp="1576942269120">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-853" y="1180" key="Github.ShareDialog/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576942269120" />
+    <state width="1398" height="813" key="GridCell.Tab.0.bottom" timestamp="1577883453666">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.0.bottom/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609921" />
+    <state width="1398" height="813" key="GridCell.Tab.0.bottom/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453666" />
+    <state width="1398" height="813" key="GridCell.Tab.0.bottom/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536270" />
+    <state width="1398" height="813" key="GridCell.Tab.0.center" timestamp="1577883453664">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.0.center/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609915" />
+    <state width="1398" height="813" key="GridCell.Tab.0.center/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453664" />
+    <state width="1398" height="813" key="GridCell.Tab.0.center/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536268" />
+    <state width="1398" height="813" key="GridCell.Tab.0.left" timestamp="1577883453663">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.0.left/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609908" />
+    <state width="1398" height="813" key="GridCell.Tab.0.left/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453663" />
+    <state width="1398" height="785" key="GridCell.Tab.0.left/-1440.0.1440.2560/0.23.1680.1027@-1345.23.1345.2537" timestamp="1576456058178" />
+    <state width="1398" height="813" key="GridCell.Tab.0.left/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536268" />
+    <state width="1398" height="813" key="GridCell.Tab.0.right" timestamp="1577883453665">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.0.right/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609916" />
+    <state width="1398" height="813" key="GridCell.Tab.0.right/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453665" />
+    <state width="1398" height="813" key="GridCell.Tab.0.right/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536269" />
+    <state width="1398" height="813" key="GridCell.Tab.1.bottom" timestamp="1577883453672">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.1.bottom/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577882747192" />
+    <state width="1398" height="813" key="GridCell.Tab.1.bottom/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453672" />
+    <state width="1398" height="813" key="GridCell.Tab.1.bottom/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536273" />
+    <state width="1398" height="813" key="GridCell.Tab.1.center" timestamp="1577883453669">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.1.center/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577882747189" />
+    <state width="1398" height="813" key="GridCell.Tab.1.center/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453669" />
+    <state width="1398" height="813" key="GridCell.Tab.1.center/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536271" />
+    <state width="1398" height="813" key="GridCell.Tab.1.left" timestamp="1577883453668">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.1.left/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577882747188" />
+    <state width="1398" height="813" key="GridCell.Tab.1.left/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453668" />
+    <state width="1398" height="813" key="GridCell.Tab.1.left/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536270" />
+    <state width="1398" height="813" key="GridCell.Tab.1.right" timestamp="1577883453671">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.1.right/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577882747191" />
+    <state width="1398" height="813" key="GridCell.Tab.1.right/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453671" />
+    <state width="1398" height="813" key="GridCell.Tab.1.right/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536272" />
+    <state width="1398" height="813" key="GridCell.Tab.2.bottom" timestamp="1577883453675">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.2.bottom/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609657" />
+    <state width="1398" height="813" key="GridCell.Tab.2.bottom/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453675" />
+    <state width="1398" height="813" key="GridCell.Tab.2.bottom/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536275" />
+    <state width="1398" height="813" key="GridCell.Tab.2.center" timestamp="1577883453673">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.2.center/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609655" />
+    <state width="1398" height="813" key="GridCell.Tab.2.center/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453673" />
+    <state width="1398" height="813" key="GridCell.Tab.2.center/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536274" />
+    <state width="1398" height="813" key="GridCell.Tab.2.left" timestamp="1577883453672">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.2.left/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609654" />
+    <state width="1398" height="813" key="GridCell.Tab.2.left/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453672" />
+    <state width="1398" height="813" key="GridCell.Tab.2.left/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536273" />
+    <state width="1398" height="813" key="GridCell.Tab.2.right" timestamp="1577883453674">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="1398" height="813" key="GridCell.Tab.2.right/-1345.23.1345.2537/0.23.1680.1027@-1345.23.1345.2537" timestamp="1577011609656" />
+    <state width="1398" height="813" key="GridCell.Tab.2.right/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577883453674" />
+    <state width="1398" height="813" key="GridCell.Tab.2.right/-1440.0.1440.2560/0.23.1680.1027@-1440.0.1440.2560" timestamp="1577320536275" />
+    <state x="-1211" y="919" key="SettingsEditor" timestamp="1577617458482">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-1211" y="919" key="SettingsEditor/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1577617458482" />
+    <state width="720" height="1280" key="XDebugger.FullValuePopup" timestamp="1576940616722">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state width="720" height="1280" key="XDebugger.FullValuePopup/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576940616722" />
+    <state x="-882" y="1078" key="svn.repositoryBrowser" timestamp="1576942398645">
+      <screen x="-1440" y="0" width="1440" height="2560" />
+    </state>
+    <state x="-882" y="1078" key="svn.repositoryBrowser/-1440.0.1440.2560/0.0.1680.1050@-1440.0.1440.2560" timestamp="1576942398645" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/HelloController.java</url>
+          <line>19</line>
+          <properties class="com.leosanqing.controller.HelloController" method="hello">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>63</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/ItemServiceImpl.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ItemController.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ShopCartController.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/AddressController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/AddressController.java</url>
+          <line>95</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/AddressServiceImpl.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/AddressServiceImpl.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/OrderServiceImpl.java</url>
+          <line>165</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/OrderServiceImpl.java</url>
+          <line>159</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/impl/OrderServiceImpl.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/CenterController.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/CenterUserController.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/CenterUserController.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/CenterUserController.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/CenterUserController.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/center/MyOrdersService.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/center/impl/MyOrdersServiceImpl.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/MyOrdersController.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/MyOrdersController.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/MyCommentsController.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-service/src/main/java/com/leosanqing/service/center/impl/MyCommentsServiceImpl.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/MyCommentsController.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/MyCommentsController.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/center/MyOrdersController.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-common/src/main/java/com/leosanqing/utils/CookieUtils.java</url>
+          <line>208</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/foodie-api/src/main/java/com/leosanqing/controller/ShopCartController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/foodie_dev$Application.ic" NAME="Application Coverage Results" MODIFIED="1575905813558" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.leosanqing.*</FILTER>
+    </SUITE>
+  </component>
+</project>
