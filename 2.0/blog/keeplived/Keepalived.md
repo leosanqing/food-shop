@@ -16,7 +16,7 @@
 
 我这个默认你已经安装了 Nginx(按照我的步骤来的)，不然最后的画面浏览器验证的方式是没用的。而且**可能会有依赖的错误**(比如 openssl)
 
-# 配置
+# 配置主机
 
 ## 下载
 
@@ -156,6 +156,55 @@
 
 4. 可以通过 `ps -ef | grep keepalived` 查看是否启动关闭是否正常
 
+# 配置备用机
+
+配置备用机和配置主机步骤类似，只需要注意几个点即可
+
+```
+! Configuration File for keepalived
+
+global_defs {
+  
+   # 路由id：当前安装keepalive 节点主机的标示符,全局唯一
+   router_id keep_10 
+   
+}
+
+# 计算机节点
+vrrp_instance VI_1 {
+    # 表示的状态，当前Nginx的主节点,MASTER/BACKUP
+    state BACKIP
+    # 当前实例绑定的网卡
+    interface eth0
+
+    # 保证主备节点一致
+    virtual_router_id 51
+    # 优先级/权重 ，谁的优先级高，MASTER挂掉之后，就能成为主节点
+    priority 80
+    # 主备之间同步检查的时间间隔，默认1s
+    advert_int 1
+    # 认证授权的密码，防止非法节点的进入
+    authentication {
+        auth_type PASS
+        auth_pass 1111
+    }
+    virtual_ipaddress {
+        10.211.55.55
+    }
+}
+
+
+```
+
+
+
+## 注意点
+
+1. `router_id`这个无所谓只需要唯一就行，相当于主机名
+2. `state`参数，改成`BACKUP`
+3. 优先级权重降低(只需要比主机的低就行)
+4. 其他要和主机保持一致
+
 # 测试
 
 ## 先看 ip
@@ -179,6 +228,117 @@
 ![](img/Xnip2020-01-05_23-41-31.jpg)
 
 
+
+
+
+## 备用机切换
+
+我们将主机的 keepalived停止或者将其关机。
+
+然后他就会自动切换到备用机
+
+![](img/Xnip2020-01-12_10-33-52.jpg)
+
+# Nginx自动重启脚本
+
+上述已经讲了如何配置主备机，但是如果我们的服务仅仅是主机的Nginx挂了，但是其他服务正常会怎么样？
+
+你仍然能访问到主机，vip绑定的也仍然是主机的ip，但其实我们的服务已经不能正常工作了
+
+这个时候我们要么**重启Nginx**，要么**关闭主机的keepalived**，让他分发到备用机上
+
+
+
+我们在keepalived.conf的同级下新建一个脚本`check_nginx_alive_or_not.sh`；
+
+1. `cd /etc/keepalived`
+2. `vim ckeck_ngin_alive_or_not.sh`
+3. 添加权限 `chmod +x ckeck_ngin_alive_or_not.sh`
+
+```javascript
+#!/bin/bash
+
+
+A=`ps -C nginx --no-header |wc -l`
+
+# 判断 Nginx是否宕机，如果宕机，尝试重启
+
+if [ $A -eq 0 ];then
+	/opt/nginxNew/sbin/nginx #这个是你Nginx的启动目录
+
+	# 等待一小会儿再次检查Nginx，如果没有启动成功，则停止keepalived，使其启动备用机
+	sleep 3
+	if [ `ps -C nginx --no-header |wc -l` -eq 0 ];then
+		killall keepalived
+	fi
+fi
+
+
+
+
+```
+
+## 可以先测试一下脚本能否正常运行
+
+1. 先关闭 Nginx `/opt/nginxNew/sbin/nginx -s stop`
+2. 然后启动脚本 `/etc/keepalived/ckeck_ngin_alive_or_not.sh`
+3. 之前的Nginx页面是否还正常
+
+## 配置进keepalived文件
+
+1. 编辑 `vim /etc/keepalived/keepalived.conf`（根据自己的情况更改参数）
+
+   ```javascript
+   ! Configuration File for keepalived
+   
+   global_defs {
+     
+      # 路由id：当前安装keepalive 节点主机的标示符,全局唯一
+      router_id keep_3
+      
+   }
+   
+   vrrp_script check_nginx_alive {
+   	script "/etc/keepalived/check_nginx_alive_or_not.sh"
+   	interval 2 # 每隔两秒运行一次
+   	weight 10 # 如果脚本运行成功，则升级权重+10
+   }
+   
+   # 计算机节点
+   vrrp_instance VI_1 {
+       # 表示的状态，当前Nginx的主节点,MASTER/BACKUP
+       state MASTER
+       # 当前实例绑定的网卡
+       interface eth0
+   
+       # 保证主备节点一致
+       virtual_router_id 51
+       # 优先级/权重 ，谁的优先级高，MASTER挂掉之后，就能成为主节点
+       priority 100
+       # 主备之巅同步检查的时间间隔，默认1s
+       advert_int 1
+       # 认证授权的密码，防止非法节点的进入
+       authentication {
+           auth_type PASS
+           auth_pass 1111
+       }
+      # 启动脚本
+       track_script {
+       	check_nginx_alive
+       }
+       virtual_ipaddress {
+           10.211.55.55
+       }
+   }
+   
+   
+   ```
+
+   
+
+2. 重启 keepalived服务. `systemctl restart keepalived`
+
+3. 关闭Nginx服务后，再次查看 Nginx页面，是否正常
 
 # 没达到预期原因分析
 
