@@ -12,7 +12,9 @@
 
 **要有至少三台虚拟机或者服务器，并且其中两个安装了Nginx**。
 
-如果没有安装Nginx可以参考下我的这篇文章，里面有Nginx的安装步骤。
+如果没有安装Nginx可以参考下我的这篇文章，[keepalived配置主备机](https://github.com/leosanqing/food-shop/blob/master/2.0/blog/keepalived/README.md) 里面有Nginx的安装步骤。
+
+
 
 # 好处
 
@@ -119,9 +121,49 @@ net.ipv4.conf.lo.arp_announce = 2
 
 # 配置集群
 
+(我只配置了其中一个Nginx的地址，另外一个和上述相同，自行配置即可)
+
 ## 安装Ipvsadm
 
 `yum install ipvsadm `
+
+## 添加虚拟ip
+
+`ipvsadm -A -t 10.211.55.222:80 -s rr`(ip 改成自己配置的虚拟ip,rr只负载均衡算法为轮询方式)
+
+## 添加集群(真实ip)
+
+1. 第一个 `ipvsadm -a -t 10.211.55.222:80 -r 10.211.55.3:80 -g`
+2. 第二个 `ipvsadm -a -t 10.211.55.222:80 -r 10.211.55.10:80 -g`
+
+## 查看是否成功
+
+`ipvsadm -Ln`
+
+![](img/Xnip2020-01-12_15-49-13.jpg)
+
+
+
+# 测试
+
+输入 虚拟地址是否能访问到  Nginx `http://10.211.55.222`(我这个只是改了Nginx的主页，便于查看集群是否正常工作)
+
+
+
+![](img/Xnip2020-01-12_16-04-37.jpg)
+
+这个默认情况下，他有一个 300s 的时间，如果再次请求，还是访问之前的ip。
+
+## 设置时间（为了方便测试）
+
+1. `ipvsadm -E -t 10.211.55.222:80 -s rr -p 5`
+2. `ipvsadm --set 1 1 1`
+
+可以使用这个命令查看失效时间  `ipvsadm -Lnc`
+
+
+
+
 
 
 
