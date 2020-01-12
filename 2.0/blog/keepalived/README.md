@@ -36,7 +36,7 @@
 
 ### 安装
 
-1. 进入 压缩后的文件夹，然后输入 `./configure --prefix=/opt/keepalived --sysconf=/etc`
+1. 进入 压缩后的文件夹 ` cd keepalived-2.0.18/ `，然后输入 `./configure --prefix=/opt/keepalived --sysconf=/etc`
 
    1. 其中`prefix`参数是配置你安装的目录。(我是所有安装的软件都放在 `/opt/{软件名}`下面，你可以根据自己的情况更改)
    2. 正常情况下都会报一个警告 `*** WARNING - this build will not support IPVS  ....`
@@ -59,7 +59,7 @@
 
 3. 正常情况下，这个文件有很多配置，我们不需要那么多，仅仅只用这些
 
-   ```
+   ```javascript
    ! Configuration File for keepalived
    
    global_defs {
@@ -160,7 +160,7 @@
 
 配置备用机和配置主机步骤类似，只需要注意几个点即可
 
-```
+```javascript
 ! Configuration File for keepalived
 
 global_defs {
