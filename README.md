@@ -25,6 +25,22 @@
 
    
 
+# 版本
+
+目前已经完成两个版本
+
+## 1.0
+
+单体项目，前端运行在tomcat即可，更改写配置即可
+
+## 2.0
+
+采用 LVS+Keepalived+Nginx 实现高可用以及高并发集群
+
+[https://github.com/leosanqing/food-shop/tree/master/2.0/blog/lvs%2Bkeepalived](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/lvs%2Bkeepalived)
+
+
+
 # 前端
 
 ## tomcat

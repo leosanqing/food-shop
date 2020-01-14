@@ -28,7 +28,7 @@
 
 ### 上传至虚拟机
 
-我们可以把它压缩包使用 **filezilla** 放到 linux 机器的 `/usr/software`文件夹下。(如果不知道filezilla 是什么或者不知道怎么用，可以看我这篇文章 filezilla )。
+我们可以把它压缩包使用 **filezilla** 放到 linux 机器的 `/usr/software`文件夹下。(如果不知道filezilla 是什么或者不知道怎么用，可以看我这篇文章 [filezilla](https://github.com/leosanqing/food-shop/tree/master/tools/filezilla) )。
 
 ### 解压缩
 
