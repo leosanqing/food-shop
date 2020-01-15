@@ -120,7 +120,7 @@ public class ItemController {
     }
 
     @GetMapping("refresh")
-    @ApiOperation(value = "根据第三级分类搜索商品列表", notes = "根据第三级分类搜索商品列表", httpMethod = "GET")
+    @ApiOperation(value = "刷新购物车", notes = "刷新购物车", httpMethod = "GET")
     public JSONResult queryItemsBySpecIds(
             @ApiParam(name = "itemSpecIds", value = "商品规格Id列表", required = true)
             @RequestParam String itemSpecIds
@@ -128,6 +128,7 @@ public class ItemController {
         if (StringUtils.isBlank(itemSpecIds)) {
             return JSONResult.errorMsg("商品规格Id列表为空");
         }
+
         List<ShopcartVO> shopCartBOS = itemService.queryItemsBySpecIds(itemSpecIds);
         return JSONResult.ok(shopCartBOS);
     }

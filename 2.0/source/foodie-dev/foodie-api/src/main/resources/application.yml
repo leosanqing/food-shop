@@ -6,7 +6,7 @@ server:
 
 spring:
   profiles:
-    active: prod
+    active: dev
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.jdbc.Driver
@@ -42,3 +42,6 @@ mapper:
 pagehelper:
   helper-dialect: mysql
   support-methods-arguments: true
+
+
+

@@ -6,7 +6,7 @@ import lombok.Data;
  * @Author: leosanqing
  * @Date: 2019-12-14 09:03
  * @Package: com.leosanqing.pojo.bo
- * @Description: TODO
+ * @Description: 地址对象
  */
 
 @Data

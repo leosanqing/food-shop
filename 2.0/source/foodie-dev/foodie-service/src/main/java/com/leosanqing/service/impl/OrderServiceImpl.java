@@ -6,7 +6,10 @@ import com.leosanqing.mapper.OrderItemsMapper;
 import com.leosanqing.mapper.OrderStatusMapper;
 import com.leosanqing.mapper.OrdersMapper;
 import com.leosanqing.pojo.*;
+import com.leosanqing.pojo.bo.ShopCartBO;
 import com.leosanqing.pojo.bo.SubmitOrderBO;
+import com.leosanqing.pojo.vo.OrderVO;
+import com.leosanqing.pojo.vo.ShopcartVO;
 import com.leosanqing.service.AddressService;
 import com.leosanqing.service.ItemService;
 import com.leosanqing.service.OrderService;
@@ -19,6 +22,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -86,7 +90,7 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional(propagation = Propagation.REQUIRED)
     @Override
-    public String createOrder(SubmitOrderBO submitOrderBO) {
+    public OrderVO createOrder(List<ShopCartBO> shopCartBOList,SubmitOrderBO submitOrderBO) {
         final String userId = submitOrderBO.getUserId();
         final String itemSpecIds = submitOrderBO.getItemSpecIds();
         final String addressId = submitOrderBO.getAddressId();
@@ -122,14 +126,19 @@ public class OrderServiceImpl implements OrderService {
         int totalAmount = 0;
         int realPayTotalAmount = 0;
         final String[] itemSpecIdArray = StringUtils.split(itemSpecIds, ',');
+        List<ShopCartBO> toBeRemovedList = new ArrayList<>();
         for (String itemSpecId : itemSpecIdArray) {
 
             // 查询每个商品的规格
 
             final ItemsSpec itemsSpec = itemService.queryItemBySpecId(itemSpecId);
+            final ShopCartBO shopCartBO = getShopCartBOFromList(shopCartBOList, itemSpecId);
 
-            // TODO 根据redis获取总共有多少件商品，现在只设置成1
-            int counts = 1;
+            toBeRemovedList.add(shopCartBO);
+            int counts = 0;
+            if (shopCartBO != null) {
+                counts = shopCartBO.getBuyCounts();
+            }
             // 获取价格
             totalAmount += itemsSpec.getPriceNormal() * counts;
             realPayTotalAmount += itemsSpec.getPriceDiscount() * counts;
@@ -174,6 +183,25 @@ public class OrderServiceImpl implements OrderService {
         orderStatus.setCreatedTime(new Date());
         orderStatusMapper.insert(orderStatus);
 
-        return orderId;
+
+        final OrderVO orderVO = new OrderVO();
+        orderVO.setOrderId(orderId);
+        orderVO.setToBeRemovedList(toBeRemovedList);
+        return orderVO;
+    }
+
+    /**
+     * 从购物车获得商品
+     * @param list
+     * @param specId
+     * @return
+     */
+    private ShopCartBO getShopCartBOFromList(List<ShopCartBO> list,String specId){
+        for (ShopCartBO bo : list) {
+            if(bo.getSpecId().equals(specId)){
+                return bo;
+            }
+        }
+        return null;
     }
 }

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @Author: leosanqing
  * @Date: 2019/12/16 上午8:22
  * @Package: com.leosanqing.config
- * @Description: TODO
+ * @Description: 自定义配置
  */
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
