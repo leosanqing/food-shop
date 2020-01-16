@@ -7,5 +7,5 @@ package com.leosanqing.controller;
  * @Description:
  */
 public class BaseController {
-    public static final String SHOP_CART = "shopCart";
+    public static final String SHOP_CART = "shopcart";
 }

@@ -3,10 +3,7 @@ package com.leosanqing.controller;
 import com.leosanqing.pojo.Users;
 import com.leosanqing.pojo.bo.UserBO;
 import com.leosanqing.service.UserService;
-import com.leosanqing.utils.CookieUtils;
-import com.leosanqing.utils.JSONResult;
-import com.leosanqing.utils.JsonUtils;
-import com.leosanqing.utils.MD5Utils;
+import com.leosanqing.utils.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
@@ -23,10 +20,13 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 @RequestMapping("passport")
 @Api(value = "注册登录", tags = {"用于注册的接口"})
-public class PassportController {
+public class PassportController extends BaseController{
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RedisOperator redisOperator;
 
 
     @GetMapping("usernameIsExist")
@@ -87,7 +87,9 @@ public class PassportController {
 
 
         // TODO 生成token，用于分布式会话
-        // TODO 同步数据到redis
+        // 同步数据到redis
+        syncShopCartData(users.getId(),request,response);
+
         return JSONResult.ok();
 
     }
@@ -127,9 +129,45 @@ public class PassportController {
 
 
         // TODO 生成token，用于分布式会话
-        // TODO 同步数据到redis
+        //  同步数据到redis
+        syncShopCartData(users.getId(),request,response);
         return JSONResult.ok(users);
 
+    }
+
+
+    /**
+     * 同步购物车数据
+     * @param userId
+     * @param request
+     * @param response
+     */
+    private void syncShopCartData(String userId,HttpServletRequest request,
+                                  HttpServletResponse response ){
+        /**
+         *  1. redis 为空，cookie 也为空。
+         *                cookie 不为空，将 cookie的数据直接存入redis
+         *  2. redis 不为空，cookie 为空，将redis数据覆盖cookie数据
+         *                  cookie 不为空，如果存在相同商品，以cookie为主
+         *
+         */
+
+        final String shopCartRedisStr = redisOperator.get(SHOP_CART + ":" + userId);
+        final String cookieValue = CookieUtils.getCookieValue(request, SHOP_CART, true);
+
+        // redis为为空，cookie不为空
+        if(StringUtils.isBlank(shopCartRedisStr)){
+
+            if(StringUtils.isNotBlank(cookieValue)){
+                redisOperator.set(SHOP_CART+":"+userId,cookieValue);
+            }
+
+        }else{
+            if(StringUtils.isNotBlank(cookieValue)){
+            }else {
+                CookieUtils.setCookie(request,response,SHOP_CART,shopCartRedisStr,true);
+            }
+        }
     }
 
     /**
