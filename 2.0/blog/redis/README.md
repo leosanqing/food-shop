@@ -50,6 +50,8 @@
    # 将127.0.0.1 改成 0.0.0.0 所有ip都能访问
    bind 0.0.0.0
    
+   # 保护模式关闭
+   protected-mode no
    
    # By default Redis does not run as a daemon. Use 'yes' if you need it.
    # Note that Redis will write a pid file in /var/run/redis.pid when daemonized.
