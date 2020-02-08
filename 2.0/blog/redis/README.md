@@ -83,7 +83,6 @@
 1. `vim /etc/init.d/redis_init_script` 添加如下内容
 
    ```javascript
-   
    #chkconfig: 22345 10 90
    #description: Start and Stop redis
    ```

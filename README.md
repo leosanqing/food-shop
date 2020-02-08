@@ -37,9 +37,19 @@
 
 采用 LVS+Keepalived+Nginx 实现高可用以及高并发集群
 
-[https://github.com/leosanqing/food-shop/tree/master/2.0/blog/lvs%2Bkeepalived](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/lvs%2Bkeepalived)
+使用 Redis作为缓存，提升系统性能，搭建集群提高并发和高可用
 
 
+
+- LVS+Keepalived+Nginx
+  - [Nginx](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/nginx%E5%AE%89%E8%A3%85)(待更)
+  - [keepalived](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/keepalived)
+  - [LVS](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/lvs)
+  - [LVS+Keepalived](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/lvs%2Bkeepalived)
+- Redis相关
+  - [redis安装和配置](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/redis)
+  - [主从复制和哨兵模式](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/redis/%E9%85%8D%E7%BD%AE%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6)
+  - Redis集群配置(待更)
 
 # 前端
 
