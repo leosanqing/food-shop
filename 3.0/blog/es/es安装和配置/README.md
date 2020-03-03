@@ -25,6 +25,10 @@ path.logs: /opt/es6/logs
 
 network.host: 0.0.0.0
 
+
+# 添加下面语句，防止跨域
+http.cors.enabled: true
+http.cors.allow-origin: "*"
 ```
 
 ## 创建文件夹
@@ -37,6 +41,7 @@ es 不能使用 root 用户运行，所以需要创建一个新的用户
 
 - `useradd esuser`
 - 切换成普通用户 `su esuser` 
+- 赋权限 `chown -R esuser /opt/es6/`（根据自己的实际情况更改路径）
 
 ![](img/Xnip2020-02-29_17-29-13.jpg)
 
