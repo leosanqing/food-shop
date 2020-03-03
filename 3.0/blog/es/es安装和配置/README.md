@@ -111,3 +111,30 @@ es 不能使用 root 用户运行，所以需要创建一个新的用户
 
 ![](img/Xnip2020-02-29_21-49-20.jpg)
 
+
+
+# 中文分词器
+
+## 安装
+
+去github上下载 [https://github.com/medcl/elasticsearch-analysis-ik](https://github.com/medcl/elasticsearch-analysis-ik)
+
+选择 对应的版本 6.x的版本
+
+![](img/Xnip2020-03-03_19-13-38.jpg)
+
+按照他的步骤 
+
+![](img/Xnip2020-03-03_19-18-18.jpg)
+
+下载，放到 plugins的ik目录下(ik目录需要新建)，然后解压
+
+之后就能运行
+
+## 验证
+
+我们启动 elasticsearch 之后
+
+我们使用 postman 发送一些命令(ip和端口换成自己的)，看到返回结果就知道了，他已经对中文进行了分词
+
+![](img/Xnip2020-03-03_19-24-07.jpg)
