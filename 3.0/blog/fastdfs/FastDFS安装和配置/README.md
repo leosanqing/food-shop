@@ -137,3 +137,77 @@ tracker_server = 10.211.55.13:22122
    ```
 
 3. 拷贝配置文件 ,便于管理`cp mod_fastdfs.conf /etc/fdfs/`
+
+4. 安装Nginx，安装步骤请看 [https://github.com/leosanqing/food-shop/tree/master/2.0/blog/nginx%E5%AE%89%E8%A3%85](https://github.com/leosanqing/food-shop/tree/master/2.0/blog/nginx安装)我们有一个地方需要注意,和之前的Nginx安装有点不一样。最后一处(注意改成自己的路径)
+
+   我们需要把FastDFS相关的模块添加上
+
+   ```javascript
+   ./configure \
+   --prefix=/opt/nginxNew \
+   --pid-path=/var/run/nginx/nginx.pid \
+   --lock-path=/var/lock/nginx.lock \
+   --error-log-path=/var/log/nginx/error.log \
+   --http-log-path=/var/log/nginx/access.log \
+   --with-http_gzip_static_module \
+   --http-client-body-temp-path=/var/temp/nginx/client \
+   --http-proxy-temp-path=/var/temp/nginx/proxy \
+   --http-fastcgi-temp-path=/var/temp/nginx/fastcgi \
+   --http-uwsgi-temp-path=/var/temp/nginx/uwsgi \
+   --http-scgi-temp-path=/var/temp/nginx/scgi \
+   --add-module=/opt/FastDFS/fastdfs-nginx-module-1.22/src
+   ```
+
+   如果之前安装过了Nginx，但是没有添加这个模块，可以参考这个博文 [Nginx如何添加新模块](https://blog.csdn.net/weixin_42313749/article/details/100167154?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)
+
+5. 修改配置文件  `vim /etc/fdfs/mod_fastdfs.conf`
+
+   ```javascript
+   base_path=/opt/FastDFS/tmp
+   tracker_server=10.211.55.13:22122
+   # 如果你之前改过的话
+   group_name=group1
+   url_have_group_name = true
+   # 这个路径和存储路径一致
+   store_path0=/opt/FastDFS/storage
+   ```
+
+   
+
+6. 新建 路径 `/opt/FastDFS/tmp` (如果没有会报错，他不会报错，只是访问不了nginx，我被这个坑死了)
+
+7. 修改Nginx的配置文件 `vim /opt/nginxNew/conf/nginx.conf`
+
+   ```javascript
+   server {
+     			# 注意这个端口要和我们之前配置的端口一致，如果你没有改过，默认是8888
+           listen       8888;
+           server_name  localhost;
+   
+           #charset koi8-r;
+   
+           #access_log  logs/host.access.log  main;
+   
+           location ~/group[0-9]/ {
+                   ngx_fastdfs_module;
+           }
+   }
+   ```
+
+   
+
+8. 然后启动 nginx
+
+# 验证
+
+我们访问 Nginx的路径，把之前的图片路径输进去 `http://10.211.55.12:8888/group1/M00/00/00/CtM3DF5ituGARmBYAABdreSfEnY901.jpg`
+
+然后能成功 返回图片 就成功了
+
+
+
+# 问题排查
+
+1. Nginx无法访问，查看防火墙是否关闭。关闭防火墙命令 `systemctl stop firewalld.service`
+2. 看所有参数是否设置正确
+3. 访问 Nginx的日志  `vim /var/temp/nginx/error.log`。我的问题是在这里发现的。他出问题不会报错，一切正常，但就是访问不了。坑了我半天
