@@ -120,3 +120,20 @@ tracker_server = 10.211.55.13:22122
 
 8. 说明我们 FastDFS已经配置好了
 
+
+
+# 安装 nginx 模块
+
+
+
+1. 解压之前下载的 Nginx模块压缩包 `tar -zxvf {文件名}`
+
+2. 进入src文件夹后，修改 config文件  
+
+   ```javascript
+   # 删掉local 
+   ngx_module_incs="/usr/include"
+   CORE_INCS="$CORE_INCS /usr/include"
+   ```
+
+3. 拷贝配置文件 ,便于管理`cp mod_fastdfs.conf /etc/fdfs/`
