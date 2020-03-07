@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:mysql://10.211.55.3:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect
+    username: root
+    password: root
+  redis:
+#    database: 1
+#    host: 10.211.55.12
+#    port: 6379
+
+    # 哨兵
+#    database: 0
+#    sentinel:
+#      master: mymaster
+#      nodes: 10.211.55.12:26379,10.211.55.6:26379,10.211.55.7:26379
+    # 集群
+    cluster:
+      nodes: 10.211.55.6:6379,10.211.55.7:6379,10.211.55.9:6379,10.211.55.10:6379,10.211.55.11:6379,10.211.55.12:6379

@@ -1,0 +1,17 @@
+server:
+  port: 8033
+
+
+
+spring:
+  data:
+    elasticsearch:
+      cluster-name: my-application
+      cluster-nodes: 10.211.55.10:9300,10.211.55.11:9300,10.211.55.12:9300
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect
+    username: root
+    password: root
