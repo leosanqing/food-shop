@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="foodie-service" />
+        <module name="foodie-fastdfs" />
         <module name="foodie-pojo" />
         <module name="foodie-mapper" />
         <module name="foodie-search" />
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="foodie-api" options="-parameters" />
       <module name="foodie-common" options="-parameters" />
+      <module name="foodie-fastdfs" options="-parameters" />
       <module name="foodie-mapper" options="-parameters" />
       <module name="foodie-pojo" options="-parameters" />
       <module name="foodie-search" options="-parameters" />

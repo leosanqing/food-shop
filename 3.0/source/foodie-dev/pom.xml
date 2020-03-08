@@ -22,6 +22,7 @@
         <module>foodie-service</module>
         <module>foodie-api</module>
         <module>foodie-search</module>
+        <module>foodie-fastdfs</module>
     </modules>
 
     <packaging>pom</packaging>

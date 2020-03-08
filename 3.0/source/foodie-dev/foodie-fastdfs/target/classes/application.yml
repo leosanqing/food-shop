@@ -1,0 +1,51 @@
+server:
+  port: 8066
+  max-http-header-size: 80KB
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  profiles:
+    active: prod
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/foodie-shop-dev?useUnicode=true&characterEncoding=UTF-8&autoReconnect
+#    username: root
+#    password: root
+    hikari:
+      connection-timeout: 300000  # 等待连接池分配连接的最大时长(毫秒),超过这个时长还没可用的连接则发生sql异常
+      minimum-idle: 5             # 最小连接数
+      maximum-pool-size: 20       # 最大连接数
+      #auto-commit: true           # 自动提交
+      idle-timeout: 600000        # 连接超时的最大时长(毫秒)，超过则被释放(retired)，默认::10分钟
+      pool-name: DataSourceHikariCP
+      max-lifetime: 1800000       # 连接的生命时长(毫秒),默认30分钟
+      connection-test-query: SELECT 1
+  servlet:
+    multipart:
+      max-file-size: 512000
+#####################
+#
+#   mybatis 配置
+#
+#####################
+mybatis:
+  type-aliases-package: com.leosanqing.pojo  # 所有pojo的路径
+  mapper-locations: classpath:mapper/*.xml   # 所有mapper的路径
+
+mapper:
+  mappers: com.leosanqing.my.mapper.MyMapper
+  not-empty: false  # 在进行数据库的操作
+  identity: MYSQL
+
+pagehelper:
+  helper-dialect: mysql
+  support-methods-arguments: true
+
+fdfs:
+  # 连接超时时间
+  connect-timeout: 30
+  so-timeout: 30
+  # tracker 地址
+  tracker-list: 10.211.55.13:22122

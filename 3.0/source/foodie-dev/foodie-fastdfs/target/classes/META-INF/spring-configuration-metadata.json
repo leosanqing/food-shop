@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "com.leosanqing.resource.FileResource",
+      "sourceType": "com.leosanqing.resource.FileResource"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.host",
+      "type": "java.lang.String",
+      "sourceType": "com.leosanqing.resource.FileResource"
+    }
+  ],
+  "hints": []
+}
