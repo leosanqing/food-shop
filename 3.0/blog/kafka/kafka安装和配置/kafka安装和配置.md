@@ -60,7 +60,7 @@ Kafka 下载地址 [http://kafka.apache.org/downloads.html](http://kafka.apache.
 
 启动之前一定要先启动 Zookeeper
 
-`/opt/kafka/bin.kafka-server-start.sh /opt/kafka/config/server.properties`
+`/opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties`
 
 # 简单操作
 
