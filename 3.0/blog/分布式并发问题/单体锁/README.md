@@ -324,7 +324,7 @@ public Integer createOrder() throws Exception {
 }
 ```
 
-
+# 局限性
 
 但是上述的加锁方法有问题，问题在哪呢？在分布式场景下他会有问题吗，这个只能在单体应用下使用
 
@@ -332,7 +332,5 @@ public Integer createOrder() throws Exception {
 
 
 
-我们用来模拟下分布式下我们使用单体锁的情况。
-
-
+我们程序用来模拟下分布式下我们使用单体锁的情况。可以在我的这篇文章中看到[分布式锁](https://github.com/leosanqing/food-shop/tree/master/3.0/blog/%E5%88%86%E5%B8%83%E5%BC%8F%E5%B9%B6%E5%8F%91%E9%97%AE%E9%A2%98/%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81)
 
