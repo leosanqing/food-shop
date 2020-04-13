@@ -5,6 +5,7 @@ com/leosanqing/utils/JsonUtils.class
 com/leosanqing/utils/CookieUtils.class
 com/leosanqing/enums/YesOrNo.class
 com/leosanqing/utils/MobileEmailUtils.class
+com/leosanqing/utils/InputMDC.class
 com/leosanqing/enums/OrderStatusEnum.class
 com/leosanqing/utils/DesensitizationUtil.class
 com/leosanqing/utils/PagedGridResult.class

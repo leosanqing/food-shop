@@ -2,4 +2,6 @@
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-fastdfs/src/main/java/com/leosanqing/FastDFSApplication.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-fastdfs/src/main/java/com/leosanqing/controller/CenterUserController.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-fastdfs/src/main/java/com/leosanqing/service/impl/FdfsServiceImpl.java
+/Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-fastdfs/src/main/java/com/leosanqing/controller/BaseController.java
+/Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-fastdfs/src/main/java/com/leosanqing/resource/FileResource.java
 /Users/zhuerchong/Desktop/code/idea/foodie-dev/foodie-fastdfs/src/main/java/com/leosanqing/service/FdfsService.java

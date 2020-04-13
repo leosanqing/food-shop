@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" schema="Log4J-V2.0.xsd" monitorInterval="600" >
+    <Properties>
+        <Property name="LOG_HOME">logs</Property>
+        <property name="FILE_NAME">collector</property>
+
+        <!--  [%d{yyyy-MM-dd'T'HH:mm:ss.SSSZZ}] 美国时间
+              [%level{length=5}] 日志等级
+              [%thread-%tid] 线程名
+              [%logger] 哪个类的名称
+              [%X{hostName}] 主机名
+              [%X{ip}] 主机ip
+              [%X{applicationName}]
+              [%F,%L,%C,%M] F file当前执行的文件是哪个，L line 第几行, C class, M method 执行的函数
+              [%m] message 输入的日志信息
+              ## '%ex'%n ex 异常
+        -->
+
+        <property name="patternLayout">[%d{yyyy-MM-dd'T'HH:mm:ss.SSSZZ}] [%level{length=5}] [%thread-%tid] [%logger] [%X{hostName}] [%X{ip}] [%X{applicationName}] [%F,%L,%C,%M] [%m] ## '%ex'%n</property>
+    </Properties>
+    <Appenders>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${patternLayout}"/>
+        </Console>  
+        <RollingRandomAccessFile name="appAppender" fileName="${LOG_HOME}/app-${FILE_NAME}.log" filePattern="${LOG_HOME}/app-${FILE_NAME}-%d{yyyy-MM-dd}-%i.log" >
+          <PatternLayout pattern="${patternLayout}" />
+          <Policies>
+              <TimeBasedTriggeringPolicy interval="1"/>
+              <SizeBasedTriggeringPolicy size="500MB"/>
+          </Policies>
+          <DefaultRolloverStrategy max="20"/>         
+        </RollingRandomAccessFile>
+        <RollingRandomAccessFile name="errorAppender" fileName="${LOG_HOME}/error-${FILE_NAME}.log" filePattern="${LOG_HOME}/error-${FILE_NAME}-%d{yyyy-MM-dd}-%i.log" >
+          <PatternLayout pattern="${patternLayout}" />
+          <Filters>
+              <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+          </Filters>              
+          <Policies>
+              <TimeBasedTriggeringPolicy interval="1"/>
+              <SizeBasedTriggeringPolicy size="500MB"/>
+          </Policies>
+          <DefaultRolloverStrategy max="20"/>         
+        </RollingRandomAccessFile>            
+    </Appenders>
+    <Loggers>
+        <!-- 业务相关 异步logger -->
+        <AsyncLogger name="com.leosanqing.*" level="info" includeLocation="true">
+          <AppenderRef ref="appAppender"/>
+        </AsyncLogger>
+        <AsyncLogger name="com.leosanqing.*" level="info" includeLocation="true">
+          <AppenderRef ref="errorAppender"/>
+        </AsyncLogger>       
+        <Root level="info">
+            <Appender-Ref ref="CONSOLE"/>
+            <Appender-Ref ref="appAppender"/>
+            <AppenderRef ref="errorAppender"/>
+        </Root>         
+    </Loggers>
+</Configuration>

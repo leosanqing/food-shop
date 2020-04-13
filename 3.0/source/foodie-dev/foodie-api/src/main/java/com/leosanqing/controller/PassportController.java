@@ -7,7 +7,9 @@ import com.leosanqing.service.UserService;
 import com.leosanqing.utils.*;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.slf4j.MDC;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,7 @@ import java.util.UUID;
 @RestController
 @RequestMapping("passport")
 @Api(value = "注册登录", tags = {"用于注册的接口"})
+@Slf4j
 public class PassportController extends BaseController{
 
     @Autowired
@@ -35,6 +38,13 @@ public class PassportController extends BaseController{
     @GetMapping("usernameIsExist")
     @ApiOperation(value = "用户名是否存在", notes = "用户名是否存在", httpMethod = "GET")
     public JSONResult usernameIsExist(@RequestParam String username) {
+
+        InputMDC.inputMDC();
+        log.info("这是条info信息");
+        log.warn("这是条warn信息");
+        log.error("这是条error信息");
+        MDC.put("0001","234");
+
         // 判断用户名为空
         if (StringUtils.isBlank(username)) {
 
